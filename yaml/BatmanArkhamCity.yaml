@@ -1,0 +1,78 @@
+# Batman: Arkham City - Archipelago player template
+#
+# Rename "YourName" below to whatever you want your slot to be called, then
+# drop this file in Archipelago's Players folder before generating.
+#
+# ALPHA: the logic is believed correct but is largely untested in real
+# multiworlds. Expect rough edges, and please report anything odd.
+
+name: YourName
+description: Batman Arkham City
+game: "Batman: Arkham City"
+
+# Archipelago requires this block even when empty.
+requires:
+  version: 0.6.1
+
+"Batman: Arkham City":
+
+  # ---------------------------------------------------------------------
+  # How many Riddler Trophies you must RECEIVE (not find) to win.
+  #
+  # Trophies are decoupled from where they're found: picking one up sends a
+  # check, and the trophies you need come back as items from the multiworld.
+  # There are 247 trophy locations in total.
+  #
+  # 100 is the default and makes for a reasonably paced run. Higher values
+  # mean a longer game, not a harder one.
+  # ---------------------------------------------------------------------
+  trophy_goal: 100        # min 100, max 234
+
+  # ---------------------------------------------------------------------
+  # Vanilla Batman starts with the Batarang and Remote-Control Batarang
+  # already unlocked. Turn this on to strip both and put them in the pool,
+  # so you have to receive them like anything else.
+  #
+  # Off is the gentler start. On means you may spend a while with no
+  # gadgets at all.
+  # ---------------------------------------------------------------------
+  randomize_starting_kit: false
+
+  # ---------------------------------------------------------------------
+  # Shuffle Batman's XP-purchasable upgrades into the pool: armour (which
+  # is this game's health system), combat upgrades, and gadget upgrades.
+  # 27 unlocks in total. You start with none and receive them as items.
+  #
+  # Note this makes early combat noticeably harder, since armour is what
+  # keeps you alive. That's the intended effect, but be aware of it.
+  #
+  # Base combat moves (Counter, Strike, Evade, Beatdown) are NOT affected
+  # by this option - see randomize_counter below.
+  # ---------------------------------------------------------------------
+  randomize_upgrades: true
+
+  # ---------------------------------------------------------------------
+  # EXPERIMENTAL - read this before turning it on.
+  #
+  # Adds Counter to the item pool. Until you receive it, Batman cannot
+  # counter attacks at all.
+  #
+  # Counter is THE core defensive mechanic of Arkham combat. Without it,
+  # any fight with three or more enemies is close to unwinnable, and there
+  # is no real substitute. Trophies guarded by enemies can become
+  # effectively unreachable until Counter arrives, and THE LOGIC DOES NOT
+  # MODEL THIS - a seed can be technically completable while being
+  # miserable to actually play.
+  #
+  # If you want combat to be harder, try randomize_upgrades on its own
+  # first. You probably don't need this as well.
+  # ---------------------------------------------------------------------
+  randomize_counter: false
+
+  # ---------------------------------------------------------------------
+  # Standard Archipelago options work as normal, for example:
+  #
+  # progression_balancing: 50
+  # accessibility: full
+  # death_link: false        # not implemented for this game yet
+  # ---------------------------------------------------------------------

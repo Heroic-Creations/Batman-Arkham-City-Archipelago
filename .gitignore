@@ -1,0 +1,50 @@
+# ---------------------------------------------------------------------
+# Copyrighted game assets - never commit these
+# ---------------------------------------------------------------------
+*.upk
+unpacked/
+swfhunt/
+bm_tex/
+
+# ---------------------------------------------------------------------
+# Save files are personal data and derived from the game.
+# The one deliberate exception is the canonical starting save that the
+# randomizer requires - see README credits for its source.
+# ---------------------------------------------------------------------
+*.sgd
+!releases/*.sgd
+Save File*/
+extracted_100save_v2/
+canonical_save_backup/
+
+# ---------------------------------------------------------------------
+# Reverse-engineering scratch: Cheat Engine tables, scans, memory dumps
+# ---------------------------------------------------------------------
+*.CT
+*.CSX
+*.CEM
+Gnames.scandata*
+
+# ---------------------------------------------------------------------
+# Bundled third-party tools - install these yourself, don't redistribute
+# ---------------------------------------------------------------------
+decompress.exe
+umodel_win32/
+ffdec/
+
+# ---------------------------------------------------------------------
+# Generated at runtime / local scratch
+# ---------------------------------------------------------------------
+__pycache__/
+*.pyc
+*.log
+ArchipelagoLogs/
+gadget_pool.csv
+gadget_sources.txt
+pickup_log.csv
+zone_names.csv
+poptracker/
+client/
+
+# Visual Studio cache
+.vs/
