@@ -1,11 +1,43 @@
 # Installation
 
-For **Batman: Arkham City — Game of the Year Edition** on **Steam** (Windows).
+> **Windows only.**
+> **Batman: Arkham City — Game of the Year Edition** only.
+>
+> The non-GOTY build has a different executable and is not supported. Only
+> the Steam GOTY build has been tested; Epic and GOG may work but nobody has
+> tried.
 
-Only the Steam GOTY build has been tested. Epic and GOG may work but nobody
-has tried.
+---
 
-Set aside 20–30 minutes for the first install. Most of it is BmSDK.
+## The easy way
+
+**Run `install.bat`** from the repo root.
+
+It shows you every action and every download URL first, and changes nothing
+until you type `YES`. It handles BmSDK, the scripts, the apworld, the YAML
+and the starting save — including finding your save folder when Documents is
+redirected to OneDrive, which is the single most common thing to get wrong.
+
+```powershell
+.\install.ps1 -Check                        # verify, change nothing
+.\install.ps1 -DryRun                       # show every action, change nothing
+.\install.ps1 -SkipBmSDK                    # BmSDK already working
+.\install.ps1 -GamePath "D:\...\Batman Arkham City GOTY"
+.\install.ps1 -PopTrackerPacksPath "C:\PopTracker\packs"
+```
+
+The one thing it asks about separately is replacing `BatmanAC.exe` with the
+BmSDK compatibility patch. You can decline; BmSDK just won't load until it's
+applied. Your original is backed up to `BatmanAC.exe.original_backup` first.
+
+If that works, skip to [step 6](#6-generate-and-play).
+
+---
+
+## The manual way
+
+Everything the installer does, by hand. Set aside 20–30 minutes; most of it
+is BmSDK.
 
 ---
 

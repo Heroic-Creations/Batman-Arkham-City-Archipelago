@@ -52,15 +52,38 @@ the same prepared save, which also makes seeds reproducible between players.
 
 ## Installation
 
-See **[docs/INSTALL.md](docs/INSTALL.md)** for the full walkthrough.
+> **Windows only. Batman: Arkham City *Game of the Year Edition* only.**
+> The non-GOTY build has a different executable and is not supported.
 
-Short version:
+Download this repo, then **run `install.bat`**.
 
-1. Install [BmSDK](https://bmsdk.dev) into your Steam copy
-2. Copy `game_scripts/*.cs` into `BmGame\Scripts\`
-3. Put `releases/batman_arkham_city.apworld` in Archipelago's `custom_worlds\`
-4. Copy the save from `releases/` into your save folder
-5. Add `releases/batman_arkham_city_ap_0.4.1.zip` to PopTracker (optional)
+It prints everything it intends to do — every file it writes, every URL it
+downloads from — and does nothing until you type `YES`. It will:
+
+- find your game through Steam, and your saves even if Documents is
+  redirected to OneDrive
+- download and install [BmSDK](https://bmsdk.dev) from its official releases
+  (asking separately before replacing `BatmanAC.exe`, backing yours up first)
+- install the scripts, the apworld, the YAML template and the starting save
+
+```powershell
+.\install.ps1 -Check      # verify an existing install, change nothing
+.\install.ps1 -DryRun     # show every action, change nothing
+.\install.ps1 -SkipBmSDK  # you already have BmSDK working
+```
+
+**`-Check` is the first thing to run if something's wrong** — it reports what's
+missing, and its output is what to paste into a bug report.
+
+Prefer to do it by hand, or the installer can't find something? Full manual
+steps are in **[docs/INSTALL.md](docs/INSTALL.md)**.
+
+### What the installer will never do
+
+It doesn't touch `Save0.sgd`, the registry, or anything outside your game
+folder, Archipelago folder and save folder. It sends nothing anywhere and has
+no telemetry. Its only network access is the two BmSDK release URLs it shows
+you up front.
 
 ---
 
